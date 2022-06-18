@@ -1,6 +1,6 @@
 {
-	"name": "bitarray.js",
-	"version": "1.0.0",
+	"name": "@codezilluh/bitarray.js",
+	"version": "1.0.1",
 	"description": "A BitArray implementation for ease-of-use",
 	"main": "index.js",
 	"scripts": {

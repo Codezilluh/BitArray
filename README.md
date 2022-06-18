@@ -11,7 +11,7 @@ The purpose of this package is to make data optimization easier. Why store a val
 You can install the package with npm
 
 ```js
-npm i bitarray.js
+npm i @codezilluh/bitarray.js
 ```
 
 ## Usage
