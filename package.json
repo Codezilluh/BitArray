@@ -1,5 +1,5 @@
 {
-	"name": "bitarray",
+	"name": "bitarray.js",
 	"version": "1.0.0",
 	"description": "A BitArray implementation for ease-of-use",
 	"main": "index.js",
