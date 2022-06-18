@@ -77,11 +77,9 @@ export class BitArray {
 	 * @returns {number} 1 or 0
 	 */
 	getBit(position) {
-		if (!position) position = this._curPos;
+		let pos = position || this._curPos;
 
-		this._curPos++;
-
-		return this._bitArray[position] ? 1 : 0;
+		return this._bitArray[pos] ? 1 : 0;
 	}
 
 	/**
@@ -100,8 +98,6 @@ export class BitArray {
 		for (var i = scale - 1; i >= 0; i--, this._curPos++) {
 			bin += this.getBit(position + i);
 		}
-
-		console.log(bin);
 
 		return parseInt(bin, 2);
 	}
