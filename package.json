@@ -1,0 +1,20 @@
+{
+	"name": "bitarray",
+	"version": "1.0.0",
+	"description": "A BitArray implementation for ease-of-use",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"buffer",
+		"bit",
+		"byte",
+		"array",
+		"compress",
+		"serialize"
+	],
+	"type": "module",
+	"author": "Codezilluh",
+	"license": "GPL-3.0"
+}
