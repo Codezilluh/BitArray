@@ -2,9 +2,9 @@ export class BitArray {
 	constructor(buf) {
 		if (buf) {
 			this.decode(buf);
+		} else {
+			this.#reset();
 		}
-
-		this.#reset();
 	}
 
 	#reset() {
