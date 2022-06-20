@@ -77,7 +77,7 @@ export class BitArray {
 	 * @returns {number} 1 or 0
 	 */
 	getBit(position) {
-		let pos = position || this._curPos;
+		let pos = position != undefined ? position : this._curPos;
 
 		return this._bitArray[pos] ? 1 : 0;
 	}
