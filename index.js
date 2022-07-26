@@ -3,14 +3,8 @@ export class BitArray {
 		if (buf) {
 			this.decode(buf);
 		} else {
-			this.#reset();
+			this.reset();
 		}
-	}
-
-	#reset() {
-		this._bitArray = [];
-		this._byteArray = [];
-		this._curPos = 0;
 	}
 
 	#getStringBin(value, scale) {
@@ -32,6 +26,15 @@ export class BitArray {
 		} else {
 			return !!((value >>> position) & 1);
 		}
+	}
+
+	/**
+	 * Reset the BitArray
+	 */
+	reset() {
+		this._bitArray = [];
+		this._byteArray = [];
+		this._curPos = 0;
 	}
 
 	/**
@@ -152,7 +155,7 @@ export class BitArray {
 	 * @returns The BitArray instance
 	 */
 	decode(buf) {
-		this.#reset();
+		this.reset();
 
 		let dat = new DataView(buf);
 
