@@ -79,8 +79,10 @@ export class BitArray {
 	 * @param {number} position The position of the bit in the BitArray
 	 * @returns {number} 1 or 0
 	 */
-	getBit(position) {
+	getBit(position = undefined) {
 		let pos = position != undefined ? position : this._curPos;
+		
+		this._curPos++;
 
 		return this._bitArray[pos] ? 1 : 0;
 	}
@@ -91,14 +93,14 @@ export class BitArray {
 	 * @param {number} position The position in the BitArray to retrieve from
 	 * @returns {number} The uInt
 	 */
-	getUint(scale, position) {
+	getUint(scale, position = undefined) {
 		let bin = "";
 
 		if (!position) position = this._curPos;
 
 		this._curPos = position;
 
-		for (var i = scale - 1; i >= 0; i--, this._curPos++) {
+		for (var i = scale - 1; i >= 0; i--) {
 			bin += this.getBit(position + i);
 		}
 
@@ -111,7 +113,7 @@ export class BitArray {
 	 * @param {number} position The position in the BitArray to retrieve from
 	 * @returns {number} The int
 	 */
-	getInt(scale, position) {
+	getInt(scale, position = undefined) {
 		if (!position) position = this._curPos;
 
 		this._curPos = position;
