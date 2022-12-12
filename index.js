@@ -81,7 +81,7 @@ export class BitArray {
 	 */
 	getBit(position = undefined) {
 		let pos = position != undefined ? position : this._curPos;
-		
+
 		this._curPos++;
 
 		return this._bitArray[pos] ? 1 : 0;
@@ -94,17 +94,17 @@ export class BitArray {
 	 * @returns {number} The uInt
 	 */
 	getUint(scale, position = undefined) {
-		let bin = "";
+		let bin = 0;
 
 		if (!position) position = this._curPos;
 
 		this._curPos = position;
 
 		for (var i = scale - 1; i >= 0; i--) {
-			bin += this.getBit(position + i);
+			bin += this.getBit(position + i) * Math.pow(2, i);
 		}
 
-		return parseInt(bin, 2);
+		return bin;
 	}
 
 	/**
